@@ -1,0 +1,150 @@
+.page-header .nav {
+  @media screen and ($max768) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.menu-toggle {
+  @extend %button-style;
+
+  @media screen and ($min768) {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: getColor('accent-color');
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  background-color: getColor('primary-bg-color');
+  z-index: 5;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: getColor('color-black');
+
+  .menu-container &:hover,
+  .menu-container &:focus {
+    color: getColor('accent-color');
+  }
+}
+
+.mobile-menu {
+  @extend %list;
+
+  &__item {
+
+
+    &:not(:last-child) {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__link {
+    @extend %link;
+
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: getColor('color-black');
+
+    @media screen and (min-width: 360px) {
+      font-size: 36px;
+    }
+
+    &--current {
+      color: getColor('accent-color');
+    }
+  }
+}
+
+.mobile-contact {
+  @extend %list;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 360px) {
+    margin-bottom: 64px;
+  }
+}
+
+.mobile-contact__item--tel {
+  padding-bottom: 32px;
+}
+
+.mobile-contact__link {
+  @extend %link;
+
+  &--tel {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: getColor('accent-color');
+
+    @media screen and (min-width: 360px) {
+      font-size: 26px;
+    }
+  }
+
+  &--mail {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: getColor('color-grey');
+
+    @media screen and (min-width: 360px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.mobile-social {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &__item {
+    padding-right: 10px;
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+
+  &__link {
+    @extend %link;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: getColor('accent-color');
+  }
+}

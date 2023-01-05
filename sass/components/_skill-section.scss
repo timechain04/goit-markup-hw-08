@@ -1,0 +1,76 @@
+.skill-section {
+  @include sectionPadding;
+}
+
+.skill {
+  @extend %list;
+
+  @media screen and ($min768) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    background-color: getColor('secondary-bg-color-white');
+    margin-bottom: 30px;
+    height: 120px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tittle {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    font-size: inherit;
+
+    text-transform: uppercase;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    line-height: 1.71;
+    color: getColor('color-grey');
+  }
+}
+
+.skill__item {
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 767px) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and ($min768) {
+    width: calc((100% - 30px) / 2);
+
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and ($min1200) {
+    margin-bottom: 0;
+
+    width: calc((100% - 90px) / 4);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}

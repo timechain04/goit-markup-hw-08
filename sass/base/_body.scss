@@ -1,0 +1,17 @@
+body {
+  color: getColor('color-black');
+  background-color: getColor('primary-bg-color');
+  font-family: $fontPrimary;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
